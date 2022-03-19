@@ -2,8 +2,6 @@
 
 Create an application that generates a random password based on user-selected criteria. The app runs in the browser and features dynamically updated HTML and CSS powered by your JavaScript code. It has a clean and polished user interface and is responsive, which ensures that it adapts to multiple screen sizes.
 
-If you are unfamiliar with special characters, take a look at some [examples of special characters on the OWASP Foundation website](https://www.owasp.org/index.php/Password_special_characters).
-
 ## User Story
 
 ```
@@ -32,9 +30,39 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 
-The following image demonstrates the application functionality:
+The following images demonstrate the application functionality:
 
-![An app window with the label Password Generator, an input field labeled Your Secure Password, and a Generate Password button.](./Assets/03-javascript-homework-demo.png)
+![image](./images/screenshot1.jpg)
+![image](./images/screenshot2.jpg)
+![image](./images/screenshot3.jpg)
+
+
+## Challenges I Faced
+
+...
+I started this project by working out a pseudocode as a foundation to the coding as follows:
+
+    // get the password length from user --passLong--
+    // get character types from user --passUp, passLow, passSpec, passNum--
+
+    //assemble an array of random characters --passArray-- that is --passLong-- in length
+        // randomly draw from one of the randomly generated character generators below --passLong number of times
+
+    // create an array for numbers --passNum--
+      // generate random number from array
+    // create an array for special characters --passSpec--
+      // generate random special characters from array
+    // create an array for lowercase letters --passLow--
+      // generate random lowercase letters from array
+    // create an array for uppercase letters --passUp--
+      // generate random uppercase letters from array
+    // reset the generators for the next random charachter draw
+
+As you are likely able to tell, there were difficulties with this approach and I needed help in assembling this conceptually. What I discovered is I should be able to assemble every character set into an array and draw randomly from that set, rather from individual arrays seperately. Very different from my original thought. To that end I discovered a video that basically walked through the process whose citation is below:
+
+    // Vega, D. [Daniel Vega]. (2020, June 19.) Random Password Generator in JavaScript [Video].YouTube. https://www.youtube.com/watch?v=v2jfGo7ztm8
+
+I did try to use different methods and processes to achieve the same result and explore the capabilities of other ideas but honestly the resulting code seems to be pretty basic to the task.
 
 ## Review
 

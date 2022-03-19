@@ -1,35 +1,17 @@
-// I started this project by working out a pseudocode as a foundation to the coding as follows:
-
-// get the password length from user --passLong--
-// get character types from user --passUp, passLow, passSpec, passNum--
-
-//assemble an array of random characters --passArray-- that is --passLong-- in length
-  // randomly draw from one of the randomly generated character generators below --passLong number of times
-
-    // create an array for numbers --passNum--
-      // generate random number from array
-    // create an array for special characters --passSpec--
-      // generate random special characters from array
-    // create an array for lowercase letters --passLow--
-      // generate random lowercase letters from array
-    // create an array for uppercase letters --passUp--
-      // generate random uppercase letters from array
-    // reset the generators for the next random charachter draw
-
-    // as you are likely able to tell, there were difficulties with this approach and I needed help in assembling this conceptually. What I discovered is I should be able to assemble every character set into an array and draw randomly from that set. Very different from my original thought. To that end I discovered a video that basically walked through the process whose citation is below:
+// The following citation was used as a reference for this challenge:
 
     // Vega, D. [Daniel Vega]. (2020, June 19.) Random Password Generator in JavaScript [Video].YouTube. https://www.youtube.com/watch?v=v2jfGo7ztm8
 
-    // I did try to use different methods and processes to achieve the same result and explore the capabilities of other ideas.
+// I have commented each line of code (bad practice I know) to ensure my understanding of what the code is trying to do in each step. I have done this after the code was written (and rewritten, and rewritten ...)
 
 
-
-
-
+// establish initial variable for the password length. This variable will change later and be use di the generation of the password as it changes
 var passLong = 8;
 
+// establish variable for the password displayed onscreen
 var assembledPassword = [];
 
+// the strings (arrays) used to asemble the characters that we randomly draw from
 var passArray = {
   passLow: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
   passUp: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
@@ -37,7 +19,7 @@ var passArray = {
   passSpec: ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+"]
 }
 
-// Assignment Code
+// Assignment Code- to line 36-ish was supplied by the assignment
 var generateBtn = document.querySelector("#generate");
 
 
@@ -52,16 +34,14 @@ function writePassword() {
       // show the password in the generator window
     var passwordText = document.querySelector("#password");
       
-    // when prompted
+    // if when we are prompted
     if(getPrompts) {
-        // call the generatePassword function
+        // we call the generatePassword function
       var newPassword = generatePassword();
         // so the the window displays the result of the function
       passwordText.value = newPassword;
-        // otherwise disp[lay nothing
-    } else {
-      passwordText.value ="";
-    }
+        // otherwise display nothing
+    } 
 }
 
       // the generatePassword function
@@ -70,7 +50,7 @@ function writePassword() {
       var password = "";
       // and incrementally counts up to the user defined password length --passLong--
       for(var i = 0; i < passLong; i++) {
-        // while randomizing each spot in the password length using this randomizing engine as assembledPassword accesses the 'length' data in the DOM prototype
+        // while randomizing each spot in the password length using this randomizing engine as assembledPassword accesses the 'length' data in the DOM prototype to determine that size
         var randomizer = Math.floor(Math.random() * assembledPassword.length);
         // and this process to assemble those randomized items together from the huge string assembled in the assembledPassword variable;
         password = password + assembledPassword[randomizer];
@@ -114,13 +94,3 @@ function writePassword() {
       // finally making he function 'true' as these inputs are generated within the parameter of the task
       return true;
     }
-
-
-
-
-    // reference  https://www.youtube.com/watch?v=v2jfGo7ztm8
-
-
-
-
-      // This challenge was inspired (at least in part) by the Tutorials Tonight blogpost involving a Random Password Generator using JavaScript located at https://www.tutorialstonight.com/password-generator-in-javascript.php and from a post by Grossbard1849 on Reddit at https://www.reddit.com/r/AskProgramming/comments/katbot/javascript_help_with_password_generator/}
