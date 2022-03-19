@@ -61,13 +61,15 @@ function writePassword() {
 
       // when we first ask the user the questions we need to define the parameters
     function prompts() {
-      // we start with the final password output blank
+      // we start with the final password variable empty of arrays
       assembledPassword = [];
 
-        // and ask how many items will be in the password
+        // and ask how many items (characters) will be in the password
       passLong = parseInt(prompt("How many characters do you want your password to be? (8 - 128 characters only please)"));
 
-        // we need to make sure the user input is consistent with the requirements of the task re: password length. The term 'isNaN' is a new term for me and I cannot find a different way to code that. If the input is below 8 and above 128 characters in length, or a value that is not a number for this input...
+        // we need to make sure the user input is consistent with the requirements of the task re: password length. The term 'isNaN' is a new term for me and I cannot find a different way to code that. It was one of the reasons for me to search for a competent example as I was at a loss to figure out how to eliminate letters, etc from the input of this particular prompt. 
+        
+        // If the input is below 8 and above 128 characters in length, or a value that is not a number for this input...
       if (passLong < 8 || passLong > 128 || isNaN(passLong)) {
         alert("Password needs to bebetween 8 and 128 characters in length! Give it another shot.")
         // the process will stop and have to be restarted with the generatePassword function
@@ -87,10 +89,10 @@ function writePassword() {
       if (window.confirm("You probably need some numbers too, yes?")) {
         assembledPassword = assembledPassword.concat(passArray.passNum);
       }
-      // and finally if the user requires special characters we will pass a bunch of them into the assemblePassword variable also
+      // and lastly if the user requires special characters we will pass a bunch of them into the assemblePassword variable also
       if (window.confirm("Definitely need some special characters though. Am I right?")) {
         assembledPassword = assembledPassword.concat(passArray.passSpec);
       }
-      // finally making he function 'true' as these inputs are generated within the parameter of the task
+      // finally making the function 'true' as these inputs are generated within the parameter of the task
       return true;
     }

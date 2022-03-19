@@ -68,9 +68,9 @@ I did try to use different methods and processes to achieve the same result and 
 
 You are required to submit the following for review:
 
-* The URL of the deployed application.
+* The URL of the deployed application. https://smckelli.github.io/password/
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project. https://github.com/smckelli/password
 
 - - -
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
